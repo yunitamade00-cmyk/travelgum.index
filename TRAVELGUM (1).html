@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELGUM| Inovasi Kesehatan Pencernaan</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf9f4;
+            color: #293c32;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #faf9f4;
+            border-bottom: 1px solid #e3e7dc;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #286247;
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: #293c32;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #4f805e;
+        }
+
+        .hero {
+            padding: 85px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            background: #edf1e6;
+        }
+
+        .hero-text {
+            max-width: 570px;
+        }
+
+        .label {
+            color: #477453;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #286247;
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.1;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            margin-bottom: 22px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #286247;
+            color: white;
+            padding: 6px 12px;
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background: #1c4b35;
+        }
+
+        .hero-image {
+            width: 40%;
+            min-height: 280px;
+            border-radius: 8px;
+            background: #dce6d4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .image-caption {
+            font-size: 12px;
+            color: #566a59;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 65px 7%;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            color: #286247;
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+
+        .section-intro {
+            color: #647267;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .about {
+            max-width: 850px;
+        }
+
+        .about p {
+            margin-top: 14px;
+        }
+
+        .ingredients {
+            background: #f0f1e9;
+        }
+
+        .ingredient-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ingredient {
+            background: #fffefa;
+            padding: 25px;
+            border: 1px solid #e2e5d9;
+            border-radius: 7px;
+        }
+
+        .ingredient img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .ingredient h3 {
+            color: #286247;
+            margin-bottom: 5px;
+            font-size: 19px;
+        }
+
+        .latin {
+            color: #758074;
+            font-size: 13px;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .ingredient p {
+            font-size: 14px;
+        }
+
+        .mechanism-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .mechanism {
+            padding: 23px;
+            border-left: 3px solid #709575;
+            background: #f0f3eb;
+        }
+
+        .number {
+            color: #66866b;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .mechanism h3 {
+            margin: 7px 0;
+            color: #286247;
+        }
+
+        .note {
+            margin-top: 25px;
+            padding: 18px;
+            background: #fff3d9;
+            border-left: 3px solid #c5a45c;
+            font-size: 13px;
+        }
+
+        .goals {
+            background: #edf1e6;
+        }
+
+        .goal-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .goal {
+            padding: 20px;
+            border-top: 2px solid #719475;
+        }
+
+        .goal h3 {
+            color: #286247;
+            margin-bottom: 8px;
+        }
+
+        .faq-item {
+            padding: 18px 0;
+            border-bottom: 1px solid #dce1d7;
+        }
+
+        .faq-item h3 {
+            color: #286247;
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+        }
+
+        footer {
+            background: #244e39;
+            color: #f8f8ef;
+            padding: 35px 7%;
+        }
+
+        footer p {
+            font-size: 13px;
+            margin-top: 10px;
+            max-width: 700px;
+            color: #e0e9df;
+        }
+
+        @media (max-width: 750px) {
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 12px 18px;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 55px;
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+
+            .ingredient-list,
+            .mechanism-list,
+            .goal-list {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 45px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TRAVELGUM</div>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kandungan">Kandungan</a>
+        <a href="#mekanisme">Cara Kerja</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+</header>
+
+<main>
+
+    <div class="hero" id="beranda">
+        <div class="hero-text">
+            <div class="label">Inovasi Berbasis Bahan Lokal</div>
+
+            <h1>TRAVELGUM</h1>
+
+            <p><strong>Jaga Perut, Nikmati Perjalanan</strong></p>
+
+            <p>
+                Berawal dari kebiasaan wisatawan mencicipi kuliner lokal,
+                TRAVELGUM dikembangkan sebagai konsep gummy yang
+                memadukan pektin kulit pomelo, ekstrak kayu manis,
+                dan stevia untuk mengeksplorasi potensi bahan alami
+                dalam mendukung kesehatan pencernaan.
+            </p>
+
+            <a href="#tentang" class="button">Jelajahi TRAVELGUM</a>
+        </div>
+
+        <div class="hero-image">
+            <!-- Ganti URL gambar di bawah dengan gambar pilihanmu -->
+            <img
+                src="WhatsApp Image 2026-11-01 at 02.34.14.jpeg"width="612 height=779"
+                alt="Buah dan bahan alami"
+            >
+            <div class="image-caption">
+                TRAVELGUM
+            </div>
+        </div>
+    </div>
+
+    <section id="tentang">
+        <div class="about">
+            <div class="label">Mengenal Produk</div>
+            <h2 class="section-title">Apa itu TRAVELGUM?</h2>
+
+            <p>
+                TRAVELGUM merupakan konsep inovasi gummy yang dirancang
+                dengan menggabungkan tiga komponen utama, yaitu pektin
+                dari kulit pomelo (Citrus maxima), ekstrak kayu manis
+                (Cinnamomum burmannii), dan stevia.
+            </p>
+
+            <p>
+                Pektin dipilih karena dapat dimanfaatkan sebagai serat
+                pangan sekaligus bahan pembentuk gel. Kayu manis
+                dieksplorasi karena mengandung cinnamaldehyde yang
+                memiliki potensi aktivitas antimikroba dalam penelitian
+                laboratorium. Sementara itu, stevia digunakan sebagai
+                pemanis dalam rancangan formulasi.
+            </p>
+
+            <p>
+                Melalui bentuk gummy, TRAVELGUM diarahkan menjadi gagasan
+                produk yang praktis dibawa saat bepergian. Formulasi ini
+                masih memerlukan pengujian keamanan, kestabilan, dan
+                efektivitas sebelum manfaat kesehatannya dapat dipastikan.
+            </p>
+        </div>
+    </section>
+
+    <section class="ingredients" id="kandungan">
+        <div class="label">Komponen Formulasi</div>
+        <h2 class="section-title">Kandungan Utama</h2>
+
+        <p class="section-intro">
+            Setiap bahan dipilih berdasarkan karakteristik dan potensi
+            yang berbeda dalam pengembangan TRAVELGUM.
+        </p>
+
+        <div class="ingredient-list">
+
+            <article class="ingredient">
+                <img
+                    src="https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?auto=format&fit=crop&w=600&q=80"
+                    alt="Buah citrus"
+                    loading="lazy"
+                >
+
+                <h3>Pektin Kulit Pomelo</h3>
+                <div class="latin">Citrus maxima</div>
+
+                <p>
+                    Pektin merupakan serat pangan yang dapat mengikat air
+                    dan membentuk gel. Karakteristik ini dimanfaatkan
+                    dalam rancangan tekstur gummy. Pektin juga berpotensi
+                    difermentasi oleh mikrobiota usus.
+                </p>
+            </article>
+
+            <article class="ingredient">
+                <img
+                    src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80"
+                    alt="Rempah-rempah"
+                    loading="lazy"
+                >
+
+                <h3>Ekstrak Kayu Manis</h3>
+                <div class="latin">Cinnamomum burmannii</div>
+
+                <p>
+                    Kayu manis mengandung cinnamaldehyde, senyawa yang
+                    telah diteliti terkait aktivitas antimikroba.
+                    Potensi aktivitasnya terhadap bakteri penyebab diare
+                    perlu diuji secara khusus pada formulasi TRAVELGUM.
+                </p>
+            </article>
+
+            <article class="ingredient">
+                <img
+                    src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80"
+                    alt="Daun tanaman"
+                    loading="lazy"
+                >
+
+                <h3>Stevia</h3>
+                <div class="latin">Stevia rebaudiana</div>
+
+                <p>
+                    Stevia dimanfaatkan sebagai alternatif pemanis
+                    untuk membantu menghasilkan rasa yang lebih nyaman.
+                    Perannya dalam formulasi ini terutama berkaitan
+                    dengan cita rasa, bukan sebagai obat antidiare.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="mekanisme">
+        <div class="label">Dari Formulasi ke Pencernaan</div>
+        <h2 class="section-title">Bagaimana Cara Kerja TRAVELGUM?</h2>
+
+        <p class="section-intro">
+            Berikut merupakan mekanisme yang diusulkan dalam rancangan
+            produk dan masih perlu dibuktikan melalui penelitian.
+        </p>
+
+        <div class="mechanism-list">
+
+            <article class="mechanism">
+                <div class="number">TAHAP 01</div>
+                <h3>Gummy dikonsumsi</h3>
+                <p>
+                    TRAVELGUM dirancang dalam bentuk gummy agar praktis
+                    dibawa selama perjalanan. Bahan-bahannya disatukan
+                    dalam satu formulasi.
+                </p>
+            </article>
+
+            <article class="mechanism">
+                <div class="number">TAHAP 02</div>
+                <h3>Memasuki lambung</h3>
+                <p>
+                    Gummy bercampur dengan cairan lambung. Ketahanan
+                    matriks pektin dan kestabilan senyawa aktif dalam
+                    kondisi asam perlu diuji, bukan diasumsikan.
+                </p>
+            </article>
+
+            <article class="mechanism">
+                <div class="number">TAHAP 03</div>
+                <h3>Perubahan kondisi pencernaan</h3>
+                <p>
+                    Ketika bergerak menuju usus, perubahan pH dan
+                    komposisi cairan pencernaan dapat memengaruhi
+                    struktur matriks serta pelepasan bahan aktif.
+                    Pola pelepasannya perlu diteliti.
+                </p>
+            </article>
+
+            <article class="mechanism">
+                <div class="number">TAHAP 04</div>
+                <h3>Potensi aktivitas kayu manis</h3>
+                <p>
+                    Cinnamaldehyde berpotensi mengganggu membran
+                    mikroorganisme tertentu berdasarkan penelitian
+                    laboratorium. Efektivitasnya terhadap bakteri
+                    penyebab diare belum dapat dipastikan pada manusia.
+                </p>
+            </article>
+
+            <article class="mechanism">
+                <div class="number">TAHAP 05</div>
+                <h3>Peran pektin sebagai serat</h3>
+                <p>
+                    Pektin dapat menjadi substrat bagi mikrobiota usus
+                    untuk difermentasi. Dampaknya terhadap keseimbangan
+                    mikrobiota bergantung pada jenis pektin dan kondisi
+                    pencernaan.
+                </p>
+            </article>
+
+            <article class="mechanism">
+                <div class="number">TAHAP 06</div>
+                <h3>Peran stevia dalam formulasi</h3>
+                <p>
+                    Stevia digunakan untuk memberikan rasa manis.
+                    Efek biologis tertentu dari komponen stevia tidak
+                    dapat dianggap sebagai manfaat klinis tanpa
+                    bukti penelitian yang memadai.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="note">
+            <strong>THE POWER OF FIBER:</strong>
+            Pektin punya perjalanan unik! alih alih dicerna
+            di awal, serat ini dapat mencapai usus besar dan 
+            dinikmati oleh bakteri usus
+        </div>
+    </section>
+
+    <section class="goals" id="manfaat">
+        <div class="label">Arah Pengembangan</div>
+        <h2 class="section-title">Mengapa TRAVELGUM Dikembangkan?</h2>
+
+        <p class="section-intro">
+            TRAVELGUM berangkat dari ide untuk mengeksplorasi bahan
+            lokal dalam bentuk yang praktis dan menarik.
+        </p>
+
+        <div class="goal-list">
+            <article class="goal">
+                <h3>01. Praktis</h3>
+                <p>
+                    Bentuk gummy dirancang agar mudah dibawa saat
+                    berwisata tanpa memerlukan alat bantu konsumsi.
+                </p>
+            </article>
+
+            <article class="goal">
+                <h3>02. Bahan Lokal</h3>
+                <p>
+                    Kulit pomelo dan kayu manis dieksplorasi sebagai
+                    bahan yang berpotensi dikembangkan lebih lanjut.
+                </p>
+            </article>
+
+            <article class="goal">
+                <h3>03. Berbasis Riset</h3>
+                <p>
+                    Pengembangan selanjutnya perlu mencakup pengujian
+                    formulasi, keamanan, kestabilan, dan aktivitas biologis.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="label">Informasi Tambahan</div>
+        <h2 class="section-title">Pertanyaan Umum</h2>
+
+        <div class="faq-item">
+            <h3> Apa yang sebaiknya dilakukan ketika mengalami diare saat bepergian?</h3>
+            <p>
+              Pastikan tubuh tetap terhidrasi, jika diare 
+              disertai gejala berat, seperti darah pada tinja,
+              demam tinggi, atau tanda dehidrasi, segera cari 
+              bantuan dari tenada kesebatan            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Kapan waktu yang tepat untuk mengonsumsi TRAVELGUM?</h3>
+            <p>
+                Waktu dan aturan konsumsi TRAVELGUM masih perlu
+                ditentukan melalui pengujian keamanan, dosis, dan
+                efektivitas produk. Informasi penggunaannya akan 
+                disesuaikan dengan hasil pengembangan lebih lanjut.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Mengapa wisatawan lebih rentan mengalami diare saat mengunjungi tempat baru?</h3>
+            <p>
+                Wisatawan dapat lebih rentan mengalami Traveler's Diarrhea karena terpapar
+                mikroorganisme penyebab diare yang mungkin belum pernah ditemui tubuh sebelumnya.
+                paparan ini bisa terjadi lewat makanan atau minuman terkontaminasi, terutama akibat budaya 
+                snackpacking yang sanitasinya kurang terjaga
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Bagaimana bakteri ETEC menyebabkan diare berrair?</h3>
+            <p>
+                ETEC menempel pada dinding usus dan menghasilkan enterotoksin yang
+                mengganggu keseimbangan cairan. akibatnya, lebih banyak air masuk
+                ke dalam usus dan menyebabkan feses menjadi encer. Inilah salah satu 
+                penyebab utama Traveler's Diarrhea!
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="logo" style="color: white;">TRAVELGUM</div>
+
+    <p>Jaga Perut, Nikmati Perjalanan.</p>
+
+    <p>
+        Website edukasi untuk memperkenalkan konsep inovasi berbasis
+        bahan lokal. Informasi di halaman ini tidak menggantikan
+        konsultasi tenaga kesehatan.
+    </p>
+
+    <p>&copy; 2026 TRAVELGUM | Proyek inovasi pelajar</p>
+</footer>
+
+</body>
+</html>
